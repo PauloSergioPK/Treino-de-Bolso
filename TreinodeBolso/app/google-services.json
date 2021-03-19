@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "515671847409",
+    "project_id": "treino-de-bolso",
+    "storage_bucket": "treino-de-bolso.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:515671847409:android:f25fdd41f90b814ae21450",
+        "android_client_info": {
+          "package_name": "com.karasdecc.treinodebolso"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "515671847409-3v86so6altt0ctsmkq2bc5qqa9bn06fd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.karasdecc.treinodebolso",
+            "certificate_hash": "48ac090803ff5e004fa1643b74e224de30bd742f"
+          }
+        },
+        {
+          "client_id": "515671847409-lp8nluk8n1bqpiljb34t4j69klgqumo1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSc2RRijlzEZevhgj_ichKbv7teDTHBRo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "515671847409-lp8nluk8n1bqpiljb34t4j69klgqumo1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
