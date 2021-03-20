@@ -13,17 +13,17 @@
         <action
             android:id="@+id/actionSignIn"
             app:destination="@id/signInFragment"
-            app:enterAnim="@anim/slide_out_left"
+            app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_left"/>
+            app:popExitAnim="@anim/slide_out_right"/>
         <action
             android:id="@+id/actionSignUp"
             app:destination="@id/signUpFragment"
-            app:enterAnim="@anim/slide_out_left"
+            app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_left"/>
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/signInFragment"
@@ -32,7 +32,7 @@
         tools:layout="@layout/fragment_sign_in">
 
         <action
-            android:id="@+id/actionBackToIntro"
+            android:id="@+id/actionSignInToIntro"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
@@ -48,7 +48,7 @@
         tools:layout="@layout/fragment_sign_up">
 
         <action
-            android:id="@+id/actionBackToIntro"
+            android:id="@+id/actionSignUpToIntro"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
