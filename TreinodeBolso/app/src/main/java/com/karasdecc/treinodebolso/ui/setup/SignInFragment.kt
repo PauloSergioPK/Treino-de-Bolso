@@ -16,7 +16,6 @@ class SignInFragment : BaseBindingFragment<FragmentSignInBinding>(FragmentSignIn
 
     private fun setupViews(){
         binding.buttonBack.setOnClickListener {
-//            activity?.onBackPressed()
             Navigation.findNavController(binding.root).navigate(R.id.actionSignInToIntro)
         }
     }
