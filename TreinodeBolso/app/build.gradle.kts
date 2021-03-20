@@ -92,6 +92,7 @@ dependencies {
     implementation("org.jsoup:jsoup:1.13.1")
     implementation("androidx.navigation:navigation-fragment-ktx:2.3.3")
     implementation("androidx.navigation:navigation-ui-ktx:2.3.3")
+    implementation("com.github.skydoves:powerspinner:1.1.7")
 
     kapt("com.github.bumptech.glide:compiler:4.11.0")
 

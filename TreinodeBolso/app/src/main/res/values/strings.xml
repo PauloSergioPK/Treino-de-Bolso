@@ -4,4 +4,11 @@
     <string name="do_sign_in">Entrar</string>
     <string name="do_sign_up">Criar conta</string>
     <string name="sign_up">Cadastro</string>
+    <string name="input_your_name">Digite o seu nome</string>
+    <string name="input_your_email">Digite o seu e-mail</string>
+    <string name="input_your_password">Digite a sua senha</string>
+    <string name="sign_up_motivation">Preparado para ficar animal?</string>
+    <string name="sign_in_motivation">É bom ter você de volta, monstro!</string>
+    <string name="sign_up_with_google">Criar conta com o google</string>
+    <string name="sign_in_with_google">Entrar com o google</string>
 </resources>
