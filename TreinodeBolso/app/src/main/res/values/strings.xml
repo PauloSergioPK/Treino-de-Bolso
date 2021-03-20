@@ -3,4 +3,5 @@
     <string name="intro_motivation">O app que vai te deixar fibrado!</string>
     <string name="do_sign_in">Entrar</string>
     <string name="do_sign_up">Criar conta</string>
+    <string name="sign_up">Cadastro</string>
 </resources>

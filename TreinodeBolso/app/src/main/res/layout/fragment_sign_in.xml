@@ -11,7 +11,8 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/statusBarColor">
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/buttonBack"
@@ -20,6 +21,7 @@
             app:cardElevation="0dp"
             app:shapeAppearanceOverlay="@style/AppCircleButton"
             android:layout_gravity="center_vertical"
+            app:cardBackgroundColor="@color/colorTransparent"
             android:layout_marginStart="@dimen/default_margin">
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -29,6 +31,15 @@
                 app:srcCompat="@drawable/ic_arrow_back"/>
 
         </com.google.android.material.card.MaterialCardView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/default_margin"
+            android:text="@string/do_sign_in"
+            style="@style/TextAppearance.AppTheme.Headline6"
+            android:textColor="@color/colorPrimary"/>
 
     </LinearLayout>
 
