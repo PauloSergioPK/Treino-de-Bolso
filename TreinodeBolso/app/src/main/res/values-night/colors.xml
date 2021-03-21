@@ -9,6 +9,8 @@
     <color name="colorSurface">#ffffff</color>
     <color name="colorOnSurface">#191919</color>
     <color name="colorTransparent">@android:color/transparent</color>
+    <color name="colorCardViewBG">#4B00BCD4</color>
+    <color name="colorCardViewText">#FFFFFF</color>
     <color name="defaultText">#8AFFFFFF</color>
     <color name="statusBarColor">#FFFFFF</color>
 </resources>
