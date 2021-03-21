@@ -1,4 +1,4 @@
-package com.karasdecc.treinodebolso.ui.main.classes;
+package com.karasdecc.treinodebolso.models;
 
 public class Exercicio {
     private String qtd_repeticoes;
