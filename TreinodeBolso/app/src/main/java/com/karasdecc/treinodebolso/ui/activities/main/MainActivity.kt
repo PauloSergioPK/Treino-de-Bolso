@@ -7,6 +7,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.karasdecc.treinodebolso.R
 import com.karasdecc.treinodebolso.databinding.ActivityMainBinding
 import com.karasdecc.treinodebolso.ui.BaseBindingActivity
 import kotlin.math.sign
@@ -32,7 +33,8 @@ class MainActivity : BaseBindingActivity<ActivityMainBinding>(ActivityMainBindin
 
     private fun configureGoogleSignIn() {
         googleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestEmail()
+            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestEmail()
             .build()
         googleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions)
     }
