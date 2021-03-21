@@ -95,6 +95,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/signUpNameField"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -106,6 +107,7 @@
                     app:layout_constraintEnd_toEndOf="parent">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/signUpNameInput"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textPersonName"
@@ -114,6 +116,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/signUpEmailField"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -126,14 +129,16 @@
                     app:layout_constraintEnd_toEndOf="parent">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/signUpEmailInput"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textPersonName"
+                        android:inputType="textEmailAddress"
                         android:lines="1" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/signUpPasswordField"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -143,12 +148,14 @@
                     app:boxCornerRadiusBottomStart="@dimen/default_margin"
                     app:boxCornerRadiusTopEnd="@dimen/default_margin"
                     app:boxCornerRadiusTopStart="@dimen/default_margin"
+                    app:endIconMode="password_toggle"
                     app:layout_constraintEnd_toEndOf="parent">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/signUpPasswordInput"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textPersonName"
+                        android:inputType="textPassword"
                         android:lines="1" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -162,6 +169,7 @@
                 android:layout_marginTop="@dimen/huge_margin"
                 android:layout_marginBottom="@dimen/default_margin"
                 android:text="@string/do_sign_up"
+                android:enabled="false"
                 app:layout_constraintBottom_toTopOf="@+id/signUpWithGoogle"
                 app:layout_constraintEnd_toEndOf="@+id/signUpWithGoogle"
                 app:layout_constraintStart_toStartOf="@+id/signUpWithGoogle"
@@ -190,5 +198,22 @@
 
     </com.google.android.material.card.MaterialCardView>
 
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/signUpProgressBG"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="@dimen/default_margin"
+        app:cardBackgroundColor="#5B000000"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:id="@+id/signUpProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

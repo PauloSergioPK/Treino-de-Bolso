@@ -1,4 +1,4 @@
-package com.karasdecc.treinodebolso.ui.setup
+package com.karasdecc.treinodebolso.ui.fragments.setup
 
 import android.os.Bundle
 import android.view.View

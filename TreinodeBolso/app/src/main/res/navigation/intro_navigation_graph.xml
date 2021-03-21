@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/introFragment"
-        android:name="com.karasdecc.treinodebolso.ui.setup.IntroFragment"
+        android:name="com.karasdecc.treinodebolso.ui.fragments.setup.IntroFragment"
         android:label="IntroFragment"
         tools:layout="@layout/fragment_intro">
         <action
@@ -27,7 +27,7 @@
     </fragment>
     <fragment
         android:id="@+id/signInFragment"
-        android:name="com.karasdecc.treinodebolso.ui.setup.SignInFragment"
+        android:name="com.karasdecc.treinodebolso.ui.fragments.setup.SignInFragment"
         android:label="SignInFragment"
         tools:layout="@layout/fragment_sign_in">
 
@@ -43,7 +43,7 @@
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.karasdecc.treinodebolso.ui.setup.SignUpFragment"
+        android:name="com.karasdecc.treinodebolso.ui.fragments.setup.SignUpFragment"
         android:label="SignUpFragment"
         tools:layout="@layout/fragment_sign_up">
 
