@@ -1,5 +1,6 @@
 package com.karasdecc.treinodebolso.ui.activities.main
 
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -10,6 +11,7 @@ import com.google.firebase.ktx.Firebase
 import com.karasdecc.treinodebolso.R
 import com.karasdecc.treinodebolso.databinding.ActivityMainBinding
 import com.karasdecc.treinodebolso.ui.BaseBindingActivity
+import com.karasdecc.treinodebolso.ui.activities.setup.IntroActivity
 import kotlin.math.sign
 
 class MainActivity : BaseBindingActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
@@ -27,6 +29,8 @@ class MainActivity : BaseBindingActivity<ActivityMainBinding>(ActivityMainBindin
     private fun setupViews(){
         binding.button2.setOnClickListener {
             signOut()
+            val intent = Intent(this, IntroActivity::class.java)
+            startActivity(intent)
             finish()
         }
     }
