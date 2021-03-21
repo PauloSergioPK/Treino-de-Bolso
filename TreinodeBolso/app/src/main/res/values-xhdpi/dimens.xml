@@ -12,4 +12,6 @@
     <dimen name="bigger_margin">48dp</dimen>
     <dimen name="huge_margin_alt">54dp</dimen>
     <dimen name="huge_margin">64dp</dimen>
+    <dimen name="intro_bar_height">200dp</dimen>
+    <dimen name="sign_in_wave_height">300dp</dimen>
 </resources>
