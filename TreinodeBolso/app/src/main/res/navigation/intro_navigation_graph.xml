@@ -7,52 +7,52 @@
 
     <fragment
         android:id="@+id/introFragment"
-        android:name="com.karasdecc.treinodebolso.ui.setup.IntroFragment"
+        android:name="com.karasdecc.treinodebolso.ui.fragments.setup.IntroFragment"
         android:label="IntroFragment"
         tools:layout="@layout/fragment_intro">
         <action
             android:id="@+id/actionSignIn"
             app:destination="@id/signInFragment"
-            app:enterAnim="@anim/slide_out_left"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_left"/>
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"/>
         <action
             android:id="@+id/actionSignUp"
             app:destination="@id/signUpFragment"
-            app:enterAnim="@anim/slide_out_left"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_left"/>
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"/>
     </fragment>
     <fragment
         android:id="@+id/signInFragment"
-        android:name="com.karasdecc.treinodebolso.ui.setup.SignInFragment"
+        android:name="com.karasdecc.treinodebolso.ui.fragments.setup.SignInFragment"
         android:label="SignInFragment"
         tools:layout="@layout/fragment_sign_in">
 
         <action
-            android:id="@+id/actionBackToIntro"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"
+            android:id="@+id/actionSignInToIntro"
+            app:enterAnim="@anim/to_right"
+            app:exitAnim="@anim/from_left"
+            app:popEnterAnim="@anim/to_left"
+            app:popExitAnim="@anim/from_left"
             app:popUpTo="@id/introFragment"
             app:popUpToInclusive="true" />
 
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.karasdecc.treinodebolso.ui.setup.SignUpFragment"
+        android:name="com.karasdecc.treinodebolso.ui.fragments.setup.SignUpFragment"
         android:label="SignUpFragment"
         tools:layout="@layout/fragment_sign_up">
 
         <action
-            android:id="@+id/actionBackToIntro"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"
+            android:id="@+id/actionSignUpToIntro"
+            app:enterAnim="@anim/to_right"
+            app:exitAnim="@anim/from_left"
+            app:popEnterAnim="@anim/to_left"
+            app:popExitAnim="@anim/from_left"
             app:popUpTo="@id/introFragment"
             app:popUpToInclusive="true" />
 

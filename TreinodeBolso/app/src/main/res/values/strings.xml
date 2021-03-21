@@ -3,4 +3,23 @@
     <string name="intro_motivation">O app que vai te deixar fibrado!</string>
     <string name="do_sign_in">Entrar</string>
     <string name="do_sign_up">Criar conta</string>
+    <string name="sign_up">Cadastro</string>
+    <string name="input_your_name">Digite o seu nome</string>
+    <string name="input_your_email">Digite o seu e-mail</string>
+    <string name="input_your_password">Digite a sua senha</string>
+    <string name="sign_up_motivation">Preparado para ficar animal?</string>
+    <string name="sign_in_motivation">É bom ter você de volta, monstro!</string>
+    <string name="sign_up_with_google">Criar conta com o google</string>
+    <string name="sign_in_with_google">Entrar com o google</string>
+    <string name="login_error">Erro ao fazer login com essa conta</string>
+    <string name="invalid_name">Que tal nos dizer o seu nome?</string>
+    <string name="invalid_email">Isso não parece um endereço de e-mail</string>
+    <string name="invalid_password">Insira a senha</string>
+    <string name="password_error_length">Sua senha precisa de, no mínimo, 6 caracteres</string>
+    <string name="email_already_in_use">Esse endereço de mail já está em uso</string>
+    <string name="sign_up_error">Erro ao criar conta</string>
+    <string name="user_not_found">Esse e-mail não está cadastrado em nosso banco de dados</string>
+    <string name="you_are_offline">Você está off-line</string>
+    <string name="wrong_password">Essa não parece ser a sua senha</string>
+
 </resources>

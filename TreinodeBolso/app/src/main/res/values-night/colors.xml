@@ -13,4 +13,5 @@
     <color name="colorCardViewText">#FFFFFF</color>
     <color name="defaultText">#8AFFFFFF</color>
     <color name="statusBarColor">#FFFFFF</color>
+    <color name="colorError">#FF0000</color>
 </resources>

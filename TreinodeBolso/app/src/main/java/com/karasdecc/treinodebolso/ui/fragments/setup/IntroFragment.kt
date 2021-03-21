@@ -1,4 +1,4 @@
-package com.karasdecc.treinodebolso.ui.setup
+package com.karasdecc.treinodebolso.ui.fragments.setup
 
 import android.os.Bundle
 import android.view.View
@@ -16,11 +16,17 @@ class IntroFragment : BaseBindingFragment<FragmentIntroBinding>(FragmentIntroBin
 
     private fun setupViews(){
         binding.buttonSignIn.setOnClickListener {
+            val currentNavigation = Navigation.findNavController(binding.root).currentDestination
+            if(currentNavigation == null)
+                Navigation.findNavController(binding.root).navigate(R.id.introFragment)
             Navigation.findNavController(binding.root).navigate(
                 R.id.actionSignIn
             )
         }
         binding.buttonSignUp.setOnClickListener {
+            val currentNavigation = Navigation.findNavController(binding.root).currentDestination
+            if(currentNavigation == null)
+                Navigation.findNavController(binding.root).navigate(R.id.introFragment)
             Navigation.findNavController(binding.root).navigate(R.id.actionSignUp
             )
         }
