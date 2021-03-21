@@ -35,6 +35,17 @@ class SignInFragment : BaseBindingFragment<FragmentSignInBinding>(FragmentSignIn
         setupRunnable()
     }
 
+    override fun onResume() {
+        super.onResume()
+        handler.removeCallbacks(checkRunnable)
+        handler.postDelayed(checkRunnable, SignUpFragment.CHECK_INTERVAL_MS)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        handler.removeCallbacks(checkRunnable)
+    }
+
     private fun setupViews() {
         binding.apply {
             buttonBack.setOnClickListener {
