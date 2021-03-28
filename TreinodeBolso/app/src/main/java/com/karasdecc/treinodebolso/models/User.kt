@@ -1,5 +1,7 @@
 package com.karasdecc.treinodebolso.models
 
+import com.google.firebase.auth.FirebaseUser
+
 data class User(
     var name: String = "",
     var email: String = "",
@@ -12,4 +14,11 @@ data class User(
     var gTraining: Training? = null,
     var crossfitTraining: Training? = null
 ) {
+
+    companion object{
+        fun createFromFirebaseUser(firebaseUser: FirebaseUser) = User().apply {
+            name = firebaseUser.displayName ?: ""
+            email = firebaseUser.displayName ?: ""
+        }
+    }
 }

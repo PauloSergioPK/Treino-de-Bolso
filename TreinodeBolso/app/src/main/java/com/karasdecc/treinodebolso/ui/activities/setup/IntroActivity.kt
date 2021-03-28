@@ -1,7 +1,9 @@
 package com.karasdecc.treinodebolso.ui.activities.setup
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -30,6 +32,8 @@ class IntroActivity : BaseBindingActivity<ActivityIntroBinding>(ActivityIntroBin
     private lateinit var googleSignInOptions: GoogleSignInOptions
     private val auth: FirebaseAuth by lazy { Firebase.auth }
 
+    private var isNewSignIn = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         configureGoogleSignIn()
@@ -55,7 +59,7 @@ class IntroActivity : BaseBindingActivity<ActivityIntroBinding>(ActivityIntroBin
             }
             null
         }?.let {
-
+            isNewSignIn = true
         }
     }
 
@@ -79,7 +83,7 @@ class IntroActivity : BaseBindingActivity<ActivityIntroBinding>(ActivityIntroBin
             }
             null
         }?.let {
-
+            isNewSignIn = true
         }
     }
 
@@ -128,13 +132,17 @@ class IntroActivity : BaseBindingActivity<ActivityIntroBinding>(ActivityIntroBin
                 it.printStackTrace()
                 null
             }?.let {
+                isNewSignIn = true
             }
         }
 
     override fun onAuthStateChanged(p0: FirebaseAuth) {
         val user = auth.currentUser
         if(user != null){
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = if(isNewSignIn)
+                Intent(this, SyncDataActivity::class.java)
+            else
+                Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
         }

@@ -66,11 +66,11 @@ dependencies {
     implementation("androidx.core:core-ktx:1.3.2")
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
     implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.3.0")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.3.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1")
     implementation("androidx.mediarouter:mediarouter:1.2.2")
     implementation("androidx.multidex:multidex:2.0.1")
-    implementation("androidx.preference:preference:1.1.1")
+    implementation("androidx.preference:preference-ktx:1.1.1")
 
     // Firebase
     implementation("com.google.firebase:firebase-analytics-ktx")
@@ -87,6 +87,11 @@ dependencies {
     implementation("com.google.android.play:core-ktx:1.8.1")
     implementation("com.google.android.gms:play-services-auth:19.0.0")
 
+    // Dependency injection
+    implementation("org.koin:koin-android:2.1.6")
+    implementation("org.koin:koin-androidx-scope:2.1.6")
+    implementation("org.koin:koin-androidx-viewmodel:2.1.6")
+
     // Others
     implementation ("com.google.android.material:material:1.3.0")
     implementation("com.github.bumptech.glide:glide:4.11.0")
@@ -97,7 +102,7 @@ dependencies {
 
     kapt("com.github.bumptech.glide:compiler:4.11.0")
 
-    testImplementation("junit:junit:4.+")
+    testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.2")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.3.0")
 
