@@ -21,5 +21,8 @@
     <string name="user_not_found">Esse e-mail não está cadastrado em nosso banco de dados</string>
     <string name="you_are_offline">Você está off-line</string>
     <string name="wrong_password">Essa não parece ser a sua senha</string>
+    <string name="training">Treino</string>
+    <string name="profile">Perfil</string>
+    <string name="home">Principal</string>
 
 </resources>

@@ -14,4 +14,6 @@
     <color name="defaultText">#8A000000</color>
     <color name="statusBarColor">#000000</color>
     <color name="colorError">#FF0000</color>
+    <color name="selectedOnPrimary">@color/colorSurface</color>
+    <color name="notSelectedOnPrimary">#272727</color>
 </resources>

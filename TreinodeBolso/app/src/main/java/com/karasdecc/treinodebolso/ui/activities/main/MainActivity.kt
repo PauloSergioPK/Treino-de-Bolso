@@ -1,51 +1,54 @@
 package com.karasdecc.treinodebolso.ui.activities.main
 
-import android.content.Intent
 import android.os.Bundle
-import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInClient
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
+import android.view.MenuItem
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.karasdecc.treinodebolso.R
 import com.karasdecc.treinodebolso.databinding.ActivityMainBinding
 import com.karasdecc.treinodebolso.ui.BaseBindingActivity
-import com.karasdecc.treinodebolso.ui.activities.setup.IntroActivity
-import kotlin.math.sign
+import com.karasdecc.treinodebolso.ui.fragments.main.HomeFragment
+import com.karasdecc.treinodebolso.ui.fragments.main.ProfileFragment
+import com.karasdecc.treinodebolso.ui.fragments.main.TrainingFragment
 
-class MainActivity : BaseBindingActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
+class MainActivity : BaseBindingActivity<ActivityMainBinding>(ActivityMainBinding::inflate),
+    BottomNavigationView.OnNavigationItemSelectedListener{
 
-    private lateinit var googleSignInClient: GoogleSignInClient
-    private lateinit var googleSignInOptions: GoogleSignInOptions
-    private val auth: FirebaseAuth by lazy { Firebase.auth }
+    private var actualFragment = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setupViews()
-        configureGoogleSignIn()
+        replaceFragment(HOME)
+        setupBottomBar()
     }
 
-    private fun setupViews(){
-        binding.button2.setOnClickListener {
-            signOut()
-            val intent = Intent(this, IntroActivity::class.java)
-            startActivity(intent)
-            finish()
+    private fun setupBottomBar(){
+        binding.mainBottomNavigation.setOnNavigationItemSelectedListener(this)
+    }
+
+    private fun replaceFragment(fragment : String){
+        if(fragment == actualFragment)
+            return
+        val ft = supportFragmentManager.beginTransaction()
+        when(fragment){
+            HOME -> ft.replace(R.id.mainFragmentContainer,HomeFragment())
+            TRAINING -> ft.replace(R.id.mainFragmentContainer,TrainingFragment())
+            PROFILE -> ft.replace(R.id.mainFragmentContainer,ProfileFragment())
         }
+        ft.commit()
     }
 
-    private fun configureGoogleSignIn() {
-        googleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id))
-            .requestEmail()
-            .build()
-        googleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions)
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.actionHome -> replaceFragment(HOME)
+            R.id.actionTraining -> replaceFragment(TRAINING)
+            R.id.actionProfile -> replaceFragment(PROFILE)
+        }
+        return true
     }
 
-    private fun signOut() {
-        auth.signOut()
-        googleSignInClient.signOut()
+    companion object {
+        const val HOME = "home"
+        const val TRAINING = "training"
+        const val PROFILE = "profile"
     }
-
 }
