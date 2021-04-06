@@ -99,6 +99,8 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:2.3.4")
     implementation("androidx.navigation:navigation-ui-ktx:2.3.4")
     implementation("com.github.skydoves:powerspinner:1.1.7")
+    implementation ("com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5")
+
 
     kapt("com.github.bumptech.glide:compiler:4.11.0")
 

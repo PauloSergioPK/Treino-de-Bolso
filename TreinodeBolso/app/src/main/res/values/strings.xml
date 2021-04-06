@@ -25,5 +25,12 @@
     <string name="training">Treino</string>
     <string name="profile">Perfil</string>
     <string name="home">Principal</string>
+    <string name="exercices">Exercicios</string>
+    <string name="exercice">Exercicio</string>
+    <string name="execution_example">Exemplo de execução</string>
+    <string name="expecification">Especificação</string>
+    <string name="description">Descrição</string>
+    <string name="description_example">Uma flexão consiste em fazer baixar o corpo de forma uniforme até que o peito fique a uma mão travessa do solo, sem lhe tocar e de seguida regressar a posição inicial.</string>
+    <string name="video">Video</string>
 
 </resources>
