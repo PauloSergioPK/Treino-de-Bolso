@@ -8,7 +8,7 @@ data class Training(
     @Exclude @set:Exclude var img: String = "",
     @Exclude @set:Exclude var title: String = "",
     @Transient var exercises: List<DocumentReference?> = listOf(),
-    @Exclude @set:Exclude var exercisesList : List<Exercise> = listOf()
+    @Exclude @set:Exclude var exercisesList : MutableList<Exercise> = mutableListOf()
 ) : Serializable {
 
 }

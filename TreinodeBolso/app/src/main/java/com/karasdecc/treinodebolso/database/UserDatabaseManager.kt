@@ -1,5 +1,7 @@
 package com.karasdecc.treinodebolso.database
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.toObject
@@ -63,19 +65,28 @@ class UserDatabaseManager(
                 ).awaitRealtimeCollection() ?: throw Exception("Failed to retrieve exercises snapshots")
 
                 val trainings = mutableListOf<Training>()
+                val map = mutableMapOf<String,Training>()
                 exercisesSnapshots.forEach { exerciseSnapshot ->
                     val referenceExercise: Exercise = exerciseSnapshot.toObject() ?: throw Exception("Retrieved a malformed training")
                     userSnapshots.forEach { userSnapshot ->
                         val userTraining: Training = userSnapshot.toObject() ?: throw Exception("Retrieved a malformed training")
-                        val exercisesList = mutableListOf<Exercise>()
                         userTraining.exercises.forEach { exercise ->
                             if(exercise?.id == exerciseSnapshot.id){
-                                exercisesList.add(referenceExercise)
+                                val key = userTraining.title
+                                val oldTraining = map[key]
+                                if(oldTraining != null){
+                                    oldTraining.exercisesList.add(referenceExercise)
+                                    map[key] = oldTraining
+                                } else {
+                                    userTraining.exercisesList.add(referenceExercise)
+                                    map[key] = userTraining
+                                }
                             }
                         }
-                        userTraining.exercisesList = exercisesList
-                        trainings.add(userTraining)
                     }
+                }
+                map.forEach{
+                    trainings.add(it.value)
                 }
                 trainings
             }.getOrElse {
