@@ -19,8 +19,6 @@ import java.lang.IllegalStateException
 class SyncDataActivity :
     BaseBindingActivity<ActivitySyncDataBinding>(ActivitySyncDataBinding::inflate) {
 
-    private val auth: FirebaseAuth by inject()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         lifecycleScope.launch {

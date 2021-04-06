@@ -11,6 +11,12 @@ import android.util.Patterns
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.annotation.Dimension
+import com.google.firebase.crashlytics.FirebaseCrashlytics
+import com.google.firebase.firestore.DocumentSnapshot
+import com.google.firebase.firestore.Query
+import com.google.firebase.firestore.Source
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.suspendCancellableCoroutine
 
 fun String.isValidEmail(): Boolean {
     return isNotEmpty() && Patterns.EMAIL_ADDRESS.matcher(this).matches()
@@ -50,3 +56,34 @@ val Context.isNetworkAvailable: Boolean get() {
         return networkInfo.isConnected
     }
 }
+
+/**
+ * Awaits for completion of this [Query] (ab)using snapshot listener's cache management.
+ * By using this you are guaranteed to receive up-to-date documents without needing
+ * to manage the source yourself.
+ *
+ * @see [Source.DEFAULT]
+ */
+@ExperimentalCoroutinesApi
+suspend inline fun Query.awaitRealtimeCollection(crashlytics: FirebaseCrashlytics? = null) =
+    suspendCancellableCoroutine<MutableList<DocumentSnapshot>?> { continuation ->
+        addSnapshotListener { value, error ->
+            if (error == null && continuation.isActive && value != null) {
+                val values = mutableListOf<DocumentSnapshot>()
+                value.forEach { documentSnapshot ->
+                    documentSnapshot?.let { values.add(it) }
+                }
+                continuation.resume(values) {
+                    crashlytics?.recordException(it)
+                    it.printStackTrace()
+                }
+            } else if (error != null && continuation.isActive) {
+                continuation.resume(null) {
+                    it.printStackTrace()
+                    crashlytics?.recordException(it)
+                    error.printStackTrace()
+                    crashlytics?.recordException(error)
+                }
+            }
+        }
+    }

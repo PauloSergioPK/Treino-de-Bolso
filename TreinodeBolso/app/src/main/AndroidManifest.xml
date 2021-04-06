@@ -19,6 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.activities.setup.SyncDataActivity"/>
+        <activity android:name=".ui.activities.exercices.ExerciseActivity"/>
     </application>
 
 </manifest>

@@ -1,12 +1,15 @@
 package com.karasdecc.treinodebolso.models
 
+import com.google.firebase.firestore.Exclude
+
 data class Exercise(
-    var title: String = "",
-    var reps: Int = 0,
-    var repsCount: Int = 0,
-    var images: List<String> = listOf(),
-    var video: String = "",
-    var specification: String = "",
-    var description: String = ""
+    @Exclude @set:Exclude @get:Exclude var id: String = "",
+    @Exclude @set:Exclude var title: String = "",
+    @Exclude @set:Exclude var reps: Int = 0,
+    @Exclude @set:Exclude var repsCount: Int = 0,
+    @Exclude @set:Exclude var images: List<String> = listOf(),
+    @Exclude @set:Exclude var video: String = "",
+    @Exclude @set:Exclude var specification: String = "",
+    @Exclude @set:Exclude var description: String = "",
 ) {
 }

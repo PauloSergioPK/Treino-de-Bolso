@@ -30,7 +30,6 @@ class IntroActivity : BaseBindingActivity<ActivityIntroBinding>(ActivityIntroBin
 
     private lateinit var googleSignInClient: GoogleSignInClient
     private lateinit var googleSignInOptions: GoogleSignInOptions
-    private val auth: FirebaseAuth by lazy { Firebase.auth }
 
     private var isNewSignIn = false
 

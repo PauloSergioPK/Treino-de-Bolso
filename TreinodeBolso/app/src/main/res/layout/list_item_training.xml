@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/trainingCard"
+        android:layout_width="@dimen/training_card_width"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/small_margin"
+        app:cardCornerRadius="@dimen/default_margin"
+        app:cardElevation="@dimen/small_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/trainingCardImage"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/training_card_height"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/imagery_chest_training" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            android:layout_marginBottom="@dimen/small_margin"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="0dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/trainingCardText"
+                style="@style/TextAppearance.AppTheme.Subtitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/tiny_margin"
+                android:textColor="@color/colorSurface"
+                tools:text="Treino A" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

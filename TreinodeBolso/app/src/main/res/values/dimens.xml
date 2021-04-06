@@ -14,4 +14,7 @@
     <dimen name="huge_margin">53.1dp</dimen>
     <dimen name="intro_bar_height">170dp</dimen>
     <dimen name="sign_in_wave_height">255dp</dimen>
+    <dimen name="training_card_width">255dp</dimen>
+    <dimen name="training_card_height">68dp</dimen>
+    <dimen name="training_bg_height">255dp</dimen>
 </resources>
